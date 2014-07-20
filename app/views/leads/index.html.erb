@@ -1,0 +1,31 @@
+<h1>Listing leads from account: <%= @account.username %> <%= link_to 'New Lead', new_lead_path, {class:"btn btn-default", role:"button"} %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Company</th>
+      <th>Title</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= lead.Name %></td>
+        <td><%= lead.Email %></td>
+        <td><%= lead.Company %></td>
+        <td><%= lead.Title %></td>
+        <td><%= lead.Phone %></td>
+        <td><%= lead.Website %></td>
+        <td><%= link_to 'Show', controller: 'leads', action: 'show', id: lead.Id %></td>
+        <td><%= link_to 'Edit', controller: 'leads', action: 'edit', id: lead.Id %></td>
+        <td><%= link_to 'Destroy', "leads/#{lead.Id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

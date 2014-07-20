@@ -1,0 +1,34 @@
+<%= form_tag '/leads/save', id: :Id, method: :post do %>
+  <%= hidden_field :lead, :Id %>
+  <div class="field">
+    <%= label :lead, :FirstName %><br>
+    <%= text_field :lead, :FirstName %>
+  </div>
+  <div class="field">
+    <%= label :lead, :LastName %><br>
+    <%= text_field :lead, :LastName %>
+  </div>
+  <div class="field">
+    <%= label :lead, :Email %><br>
+    <%= text_field :lead, :Email %>
+  </div>
+  <div class="field">
+    <%= label :lead, :Company %><br>
+    <%= text_field :lead, :Company %>
+  </div>
+  <div class="field">
+    <%= label :lead, :Title %><br>
+    <%= text_field :lead, :Title %>
+  </div>
+  <div class="field">
+    <%= label :lead, :Phone %><br>
+    <%= text_field :lead, :Phone %>
+  </div>
+  <div class="field">
+    <%= label :lead, :Website %><br>
+    <%= text_field :lead, :Website %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

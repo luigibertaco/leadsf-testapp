@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: luigibertacocristofolini
+  password: 
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: rdsalesforcelead_dev
+
+test:
+  <<: *default
+  database: rdsalesforcelead_test

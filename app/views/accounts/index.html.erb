@@ -1,0 +1,26 @@
+<h1>Listing accounts <%= link_to 'New Account', new_account_path, {class:"btn btn-default", role:"button"} %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Security token</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.username %></td>
+        <td><%= account.password %></td>
+        <td><%= account.security_token %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Login', login_account_path(account) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
