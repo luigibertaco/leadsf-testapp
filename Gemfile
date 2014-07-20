@@ -44,3 +44,5 @@ gem 'bootstrap-sass'
 
 # gem 'force'
 gem 'leadsf'
+
+gem 'rails_12factor', group: :production
